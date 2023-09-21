@@ -28,7 +28,7 @@ public class CageLampBlock extends WallDecorationBlock implements NativeMultipar
             Block.createCuboidShape(0, 4, 4, 10, 12, 12), //
     };
 
-    public static final Block INSTANCE = new CageLampBlock(FabricBlockSettings.of(Material.METAL, MapColor.GRAY).sounds(BlockSoundGroup.LANTERN).strength(2F, 10F).nonOpaque().luminance(14));
+    public static final Block INSTANCE = new CageLampBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).sounds(BlockSoundGroup.LANTERN).strength(2F, 10F).nonOpaque().luminance(14));
     public static final Item ITEM = new BlockItem(INSTANCE, new FabricItemSettings());
 
     public CageLampBlock(Settings settings) {

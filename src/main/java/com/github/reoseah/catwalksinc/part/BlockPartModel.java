@@ -31,7 +31,7 @@ public class BlockPartModel implements PartModelBaker<BlockModelKey> {
     public void emitQuads(BlockModelKey key, PartRenderContext ctx) {
         BakedModel model = this.getOrCreateModel(key.getBlockState());
         if (model != null) {
-            ctx.fallbackConsumer().accept(model);
+            ctx.bakedModelConsumer().accept(model);
         }
     }
 

@@ -1,12 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "III",
+    "I*I",
     "###"
   ],
   "key": {
     "#": {
       "tag": "c:iron_ingots"
+    },
+    "*": {
+      "tag": "c:iron_nuggets"
     },
     "I": {
       "tag": "c:iron_rods"

@@ -96,7 +96,7 @@ public class CatwalkBlock extends CatwalksIncBlock implements NativeMultipart {
         }
     }
 
-    public static final Block INSTANCE = new CatwalkBlock(FabricBlockSettings.of(Material.METAL, MapColor.GRAY).sounds(BlockSoundGroup.LANTERN).strength(2F, 10F).nonOpaque());
+    public static final Block INSTANCE = new CatwalkBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).sounds(BlockSoundGroup.LANTERN).strength(2F, 10F).nonOpaque());
     public static final Item ITEM = new BlockItem(INSTANCE, new FabricItemSettings());
 
     public CatwalkBlock(Settings settings) {
@@ -296,7 +296,7 @@ public class CatwalkBlock extends CatwalksIncBlock implements NativeMultipart {
                 BlockPos lowerPos = upperPos.down();
 
                 BlockState checkEmptyState = world.getBlockState(upperPos);
-                if (!checkEmptyState.getMaterial().isReplaceable()) {
+                if (!checkEmptyState.isReplaceable()) {
                     // there's a block that prevents catwalk from turning to stairs to connect to us
                     continue;
                 }

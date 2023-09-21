@@ -6,6 +6,7 @@ import alexiil.mc.lib.multipart.api.render.PartModelKey;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.context.LootContext;
+import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -65,15 +66,14 @@ public abstract class CatwalksIncPart extends AbstractPart {
     }
 
     @Override
-    public void addDrops(ItemDropTarget target, LootContext context) {
-        target.dropAll(this.getClosestBlockState().getDroppedStacks(new LootContext.Builder(context.getWorld()) //
-                .random(context.getRandom()) //
-                .luck(context.getLuck()) //
-                .parameter(LootContextParameters.BLOCK_STATE, context.get(LootContextParameters.BLOCK_STATE)) //
-                .parameter(LootContextParameters.ORIGIN, context.get(LootContextParameters.ORIGIN)) //
-                .parameter(LootContextParameters.TOOL, context.get(LootContextParameters.TOOL)) //
-                .optionalParameter(LootContextParameters.THIS_ENTITY, context.get(LootContextParameters.THIS_ENTITY)) //
-                .optionalParameter(LootContextParameters.BLOCK_ENTITY, context.get(LootContextParameters.BLOCK_ENTITY)) //
-                .optionalParameter(LootContextParameters.EXPLOSION_RADIUS, context.get(LootContextParameters.EXPLOSION_RADIUS))));
+    public void addDrops(ItemDropTarget target, LootContextParameterSet params) {
+        target.dropAll(this.getClosestBlockState().getDroppedStacks(new LootContextParameterSet.Builder(params.getWorld())
+                .luck(params.getLuck()) //
+                .add(LootContextParameters.BLOCK_STATE, params.get(LootContextParameters.BLOCK_STATE)) //
+                .add(LootContextParameters.ORIGIN, params.get(LootContextParameters.ORIGIN)) //
+                .add(LootContextParameters.TOOL, params.get(LootContextParameters.TOOL)) //
+                .addOptional(LootContextParameters.THIS_ENTITY, params.get(LootContextParameters.THIS_ENTITY)) //
+                .addOptional(LootContextParameters.BLOCK_ENTITY, params.get(LootContextParameters.BLOCK_ENTITY)) //
+                .addOptional(LootContextParameters.EXPLOSION_RADIUS, params.get(LootContextParameters.EXPLOSION_RADIUS))));
     }
 }

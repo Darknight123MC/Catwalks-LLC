@@ -1,6 +1,6 @@
-# Catwalks Inc
+# Catwalks LLC
 
-Catwalks Inc. is a leading industrial provider of personnel foot-traffic solutions for the construction, manufacturing and mining industries.
+Catwalks LLC. is a leading industrial provider of personnel foot-traffic solutions for the construction, manufacturing and mining industries.
 
 Our innovative solutions have been trusted by thousands of enterprises and millions of people for over 9000 years.
 
@@ -12,13 +12,13 @@ Our solutions include:
 
 
 
-_Catwalks Inc.'s pre-assembled modules:_
+_Catwalks LLC.'s pre-assembled modules:_
 
 #### Catwalk
 
 ![](https://raw.githubusercontent.com/Reoseah/catwalks-incorporated/1.18/docs/img/catwalk.png)
 
-Pre-assembled catwalk section by Catwalks Inc.  
+Pre-assembled catwalk section by Catwalks LLC.  
 
 Our customizable catwalk modules can transform into stairs to fit demands of your specific application.  
 
@@ -72,17 +72,17 @@ Use left side to rotate counter-clockwise and decrease level by one, right side 
 (Lubricant is not included.)
 
 
-_Catwalks Inc. tools:_
+_Catwalks LLC. tools:_
 
 #### Adjustable Wrench
 
 ![](https://raw.githubusercontent.com/Reoseah/catwalks-incorporated/1.18/docs/img/adjustable_wrench.png)
 
-A tool to adjust Catwalks' Inc. structural features.
+A tool to adjust Catwalks' LLC. structural features.
   
 Our patented Adjustable® technology allows you to instantly recognize systems that fit this wrench as long as you hold the wrench in your hand.
 
-Catwalks Inc. is not liable for any damage to structures or other entities that resulted from a misuse of our tooling.
+Catwalks LLC. is not liable for any damage to structures or other entities that resulted from a misuse of our tooling.
 
 #### Paint Roller
 
@@ -92,7 +92,7 @@ A tool that can paint blocks placed in world.
 
 Our custom-designed Dye Soft Balance® technology allows 100% pigment utilization on a multitude of surfaces.
   
-However, only the following pigments have been authorized to use with Catwalks Inc. foot-traffic solutions:
+However, only the following pigments have been authorized to use with Catwalks LLC. foot-traffic solutions:
 
 - Dandelion Yellow by Vanilla Limited
 - Rose Red by Vanilla Limited
@@ -105,4 +105,4 @@ A tool to revert changes made with Paint Roller.
 
 
 ------------------------------
-Contact us at [https://github.com/Reoseah/catwalks-incorporated/issues](https://github.com/Reoseah/catwalks-incorporated/issues) (business inquiries only)
+Contact us at [https://github.com/Darknight123MC/Catwalks-LLC/issues](https://github.com/Darknight123MC/Catwalks-LLC/issues) (business inquiries only)

@@ -10,10 +10,9 @@ public class CatwalksUtil {
         Direction.Axis perpendicular = facing.rotateYClockwise().getAxis();
         double relative = hitPos.getComponentAlongAxis(perpendicular) - pos.getComponentAlongAxis(perpendicular);
 
-        HorizontalHalf half = facing.rotateYClockwise().getDirection() == Direction.AxisDirection.POSITIVE && relative > 0.5 //
+        return facing.rotateYClockwise().getDirection() == Direction.AxisDirection.POSITIVE && relative > 0.5 //
                 || facing.rotateYClockwise().getDirection() == Direction.AxisDirection.NEGATIVE && relative < 0.5 //
                 ? HorizontalHalf.LEFT : HorizontalHalf.RIGHT;
-        return half;
     }
 
     public static Direction compare(BlockPos origin, BlockPos target) {

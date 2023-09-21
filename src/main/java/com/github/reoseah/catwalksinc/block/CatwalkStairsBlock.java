@@ -90,7 +90,7 @@ public class CatwalkStairsBlock extends CatwalksIncBlock implements BlockEntityP
         }
     }
 
-    public static final Block INSTANCE = new CatwalkStairsBlock(FabricBlockSettings.of(Material.METAL, MapColor.GRAY).sounds(BlockSoundGroup.LANTERN).strength(2F, 10F).nonOpaque());
+    public static final Block INSTANCE = new CatwalkStairsBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.LANTERN).strength(2F, 10F).nonOpaque());
 
     public CatwalkStairsBlock(Settings settings) {
         super(settings);
@@ -131,7 +131,7 @@ public class CatwalkStairsBlock extends CatwalksIncBlock implements BlockEntityP
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return super.getPlacementState(ctx).with(FACING, ctx.getPlayerFacing().getOpposite());
+        return super.getPlacementState(ctx).with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
 
     @Override
@@ -205,7 +205,10 @@ public class CatwalkStairsBlock extends CatwalksIncBlock implements BlockEntityP
         BlockState neighbor = world.getBlockState(pos.offset(direction));
         BlockState above = world.getBlockState(pos.offset(direction).up());
 
-        if (neighbor.isSideSolidFullSquare(world, pos.offset(direction), direction.getOpposite()) && neighbor.getMaterial() != Material.AGGREGATE && above.isSideSolidFullSquare(world, pos.offset(direction).up(), direction.getOpposite()) && above.getMaterial() != Material.AGGREGATE) {
+        if (neighbor.isSideSolidFullSquare(world, pos.offset(direction), direction.getOpposite())
+                && neighbor.getMapColor(world, pos) != MapColor.PALE_YELLOW
+                && above.isSideSolidFullSquare(world, pos.offset(direction).up(), direction.getOpposite())
+                && above.getMapColor(world, pos) != MapColor.PALE_YELLOW) {
             return false;
         }
         if (neighbor.getBlock() instanceof CatwalkStairsBlock) {

@@ -34,7 +34,7 @@ import java.util.List;
 public class CrankWheelBlock extends WallDecorationBlock implements NativeMultipart {
     public static final IntProperty ROTATION = Properties.ROTATION;
 
-    public static final Block INSTANCE = new CrankWheelBlock(FabricBlockSettings.of(Material.METAL, MapColor.GRAY).sounds(BlockSoundGroup.LANTERN).strength(2F, 10F).nonOpaque());
+    public static final Block INSTANCE = new CrankWheelBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).sounds(BlockSoundGroup.LANTERN).strength(2F, 10F).nonOpaque());
     public static final Item ITEM = new BlockItem(INSTANCE, new FabricItemSettings());
 
     public static final VoxelShape[] SHAPES = { //

@@ -29,6 +29,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
@@ -43,9 +44,19 @@ import net.minecraft.world.World;
 public class CatwalksInc implements ModInitializer, ClientModInitializer {
     public static final String ID = "catwalksinc";
 
-    public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder(id("main")).icon(() -> new ItemStack(CatwalkBlock.ITEM)).build();
-
     public static final Item IRON_ROD = new Item(new FabricItemSettings());
+
+    public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder().
+            displayName(Text.translatable("itemGroup.catwalksinc.main"))
+            .icon(() -> new ItemStack(CatwalkBlock.ITEM))
+            .entries((displayContext, entries) -> {
+                entries.add(CatwalkBlock.ITEM);
+                entries.add(CageLampBlock.ITEM);
+                entries.add(CrankWheelBlock.ITEM);
+                entries.add(WrenchItem.INSTANCE);
+                entries.add(IRON_ROD);
+            })
+            .build();
 
     public static Identifier id(String name) {
         return new Identifier(ID, name);
@@ -75,15 +86,9 @@ public class CatwalksInc implements ModInitializer, ClientModInitializer {
 
         Registry.register(Registries.ITEM, "catwalksinc:iron_rod", IRON_ROD);
 
-        UseBlockCallback.EVENT.register(CatwalksInc::interact);
+        Registry.register(Registries.ITEM_GROUP, id("main"), ITEM_GROUP);
 
-        ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP).register(entries -> {
-            entries.add(CatwalkBlock.ITEM);
-            entries.add(CageLampBlock.ITEM);
-            entries.add(CrankWheelBlock.ITEM);
-            entries.add(WrenchItem.INSTANCE);
-            entries.add(IRON_ROD);
-        });
+        UseBlockCallback.EVENT.register(CatwalksInc::interact);
     }
 
     @Override

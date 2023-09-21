@@ -1,0 +1,18 @@
+{
+  "itemGroup.catwalksinc.main": "Catwalks, LLC.",
+  "block.catwalksinc.catwalk": "喵爬架",
+  "block.catwalksinc.catwalk.desc.0": "§7对角放置时可转换成楼梯",
+  "block.catwalksinc.catwalk.desc.1": "§7垂直放置时可转换成梯子",
+  "block.catwalksinc.catwalk.desc.2": "§7使用扳手调整两侧",
+  "block.catwalksinc.catwalk_stairs": "喵爬架楼梯",
+  "block.catwalksinc.caged_ladder": "笼梯",
+  "block.catwalksinc.cage_lamp": "笼灯",
+  "block.catwalksinc.crank_wheel": "曲柄轮",
+  "item.catwalksinc.wrench": "扳手",
+  "item.catwalksinc.iron_rod": "铁杆",
+  "subtitles.catwalksinc.wrench_use": "使用扳手",
+  "misc.catwalksinc.blocked_by_another_multipart": "与其他部件冲突！",
+  "misc.catwalksinc.default_handrail": "默认",
+  "misc.catwalksinc.forced_handrail": "强制",
+  "misc.catwalksinc.forced_no_handrail": "禁用"
+}

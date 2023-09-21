@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "INI",
-    " I "
+    " A "
   ],
   "key": {
     "N": {
@@ -10,6 +10,9 @@
     },
     "I": {
       "tag": "c:iron_rods"
+    },
+    "A": {
+      "tag": "c:iron_ingots"
     }
   },
   "result": {

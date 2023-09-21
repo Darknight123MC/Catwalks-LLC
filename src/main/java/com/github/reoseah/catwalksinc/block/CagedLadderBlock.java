@@ -75,7 +75,7 @@ public class CagedLadderBlock extends CatwalksIncBlock {
             VoxelShapes.union(LADDER_ONLY_COLLISION_SHAPES[3], CAGE_ONLY_COLLISION_SHAPES[3]) //
     };
 
-    public static final Block INSTANCE = new CagedLadderBlock(FabricBlockSettings.of(Material.METAL, MapColor.GRAY).sounds(BlockSoundGroup.LANTERN).strength(2F, 10F).nonOpaque());
+    public static final Block INSTANCE = new CagedLadderBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).sounds(BlockSoundGroup.LANTERN).strength(2F, 10F).nonOpaque());
 
     protected CagedLadderBlock(Settings settings) {
         super(settings);
@@ -118,7 +118,7 @@ public class CagedLadderBlock extends CatwalksIncBlock {
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        Direction facing = ctx.getPlayerFacing().getOpposite();
+        Direction facing = ctx.getHorizontalPlayerFacing().getOpposite();
         CageState cage = getCageState(ctx.getWorld(), ctx.getBlockPos());
         return super.getPlacementState(ctx).with(FACING, facing).with(CAGE, cage).with(LADDER, getLadderState(facing, cage, ctx.getWorld(), ctx.getBlockPos()));
     }
